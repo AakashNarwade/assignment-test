@@ -1,0 +1,15 @@
+.red {
+  color: red !important;
+}
+
+.green {
+  color: green;
+}
+.shape {
+  color: blue;
+}
+.hello {
+  background-color: green;
+  width: 40px;
+  height: 60px;
+}

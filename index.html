@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="john">
+      <p class="red">hi</p>
+      <p1 class="red"> hi </p1>
+      <p class="red">hi</p>
+      <p class="green">hello</p>
+      <input
+        id="name"
+        onmousemove="myFunction()"
+        onmouseout="hoveredOut()"
+        type="text"
+      />
+    </div>
+
+    <script>
+      function myFunction() {
+        document.getElementById("name").focus();
+        let parentElement = document.getElementById("john");
+        let declaration = document.styleSheets[0].cssRules[0].style;
+        let priority = declaration.getPropertyPriority("color");
+        if (priority === "important") {
+          let children = parentElement.children;
+          for (let i = 0; i < children.length; i++) {
+            if (children[i].classList.value === "red") {
+              children[i].classList.value = "shape";
+            }
+          }
+        }
+      }
+
+      {
+        function hoveredOut() {
+          let parentElement = document.getElementById("john");
+          let declaration = document.styleSheets[0].cssRules[0].style;
+          let priority = declaration.getPropertyPriority("color");
+          if (priority === "important") {
+            let children = parentElement.children;
+            for (let i = 0; i < children.length; i++) {
+              if (children[i].classList.value === "shape") {
+                children[i].classList.value = "red";
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
